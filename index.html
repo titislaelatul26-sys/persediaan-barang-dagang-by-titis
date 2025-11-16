@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Persediaan Barang Dagang - Media Pembelajaran</title>
+    <link rel="stylesheet" href="coding.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#" onclick="showSection('home', event)">Home</a></li>
+            <li><a href="#" onclick="showSection('tujuan', event)">Tujuan</a></li>
+            <li><a href="#" onclick="showSection('pertemuan', event)">Pertemuan</a></li>
+            <li><a href="#" onclick="showSection('asesmen', event)">Asesmen</a></li>
+            <li><a href="#" onclick="showSection('sumber', event)">Sumber</a></li>
+            <li><a href="#" onclick="showSection('about', event)">Tentang</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="container">
+        
+        <!-- HOME SECTION -->
+        <section id="home" class="active">
+            <div class="hero-container">
+                <div class="hero-illustration">
+                    <svg viewBox="0 0 400 350" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Background -->
+                        <rect width="400" height="350" fill="#f5f5f5"/>
+                        
+                        <!-- Shelving unit 1 -->
+                        <rect x="20" y="50" width="160" height="250" fill="#d4a574" stroke="#b8945f" stroke-width="2"/>
+                        
+                        <!-- Horizontal shelves -->
+                        <rect x="30" y="80" width="140" height="8" fill="#8b7355" stroke="#6b5a47" stroke-width="1"/>
+                        <rect x="30" y="130" width="140" height="8" fill="#8b7355" stroke="#6b5a47" stroke-width="1"/>
+                        <rect x="30" y="180" width="140" height="8" fill="#8b7355" stroke="#6b5a47" stroke-width="1"/>
+                        <rect x="30" y="230" width="140" height="8" fill="#8b7355" stroke="#6b5a47" stroke-width="1"/>
+                        
+                        <!-- Vertical supports -->
+                        <rect x="25" y="50" width="6" height="250" fill="#8b7355"/>
+                        <rect x="95" y="50" width="6" height="250" fill="#8b7355"/>
+                        <rect x="165" y="50" width="6" height="250" fill="#8b7355"/>
+                        
+                        <!-- Products on shelf 1 -->
+                        <rect x="40" y="60" width="20" height="20" fill="#e893ce" stroke="#d97bc3" stroke-width="1.5" rx="2"/>
+                        <rect x="65" y="60" width="20" height="20" fill="#f0a8d8" stroke="#e07ec4" stroke-width="1.5" rx="2"/>
+                        <rect x="90" y="60" width="20" height="20" fill="#d9a0c5" stroke="#c98db9" stroke-width="1.5" rx="2"/>
+                        <rect x="115" y="60" width="20" height="20" fill="#e893ce" stroke="#d97bc3" stroke-width="1.5" rx="2"/>
+                        
+                        <!-- Products on shelf 2 -->
+                        <rect x="40" y="110" width="20" height="20" fill="#d9a0c5" stroke="#c98db9" stroke-width="1.5" rx="2"/>
+                        <rect x="65" y="110" width="20" height="20" fill="#e893ce" stroke="#d97bc3" stroke-width="1.5" rx="2"/>
+                        <rect x="90" y="110" width="20" height="20" fill="#f0a8d8" stroke="#e07ec4" stroke-width="1.5" rx="2"/>
+                        <rect x="115" y="110" width="20" height="20" fill="#d9a0c5" stroke="#c98db9" stroke-width="1.5" rx="2"/>
+                        
+                        <!-- Products on shelf 3 -->
+                        <rect x="40" y="160" width="20" height="20" fill="#e893ce" stroke="#d97bc3" stroke-width="1.5" rx="2"/>
+                        <rect x="65" y="160" width="20" height="20" fill="#f0a8d8" stroke="#e07ec4" stroke-width="1.5" rx="2"/>
+                        <rect x="90" y="160" width="20" height="20" fill="#d9a0c5" stroke="#c98db9" stroke-width="1.5" rx="2"/>
+                        <rect x="115" y="160" width="20" height="20" fill="#e893ce" stroke="#d97bc3" stroke-width="1.5" rx="2"/>
+                        
+                        <!-- Products on shelf 4 -->
+                        <rect x="40" y="210" width="20" height="20" fill="#f0a8d8" stroke="#e07ec4" stroke-width="1.5" rx="2"/>
+                        <rect x="65" y="210" width="20" height="20" fill="#d9a0c5" stroke="#c98db9" stroke-width="1.5" rx="2"/>
+                        <rect x="90" y="210" width="20" height="20" fill="#e893ce" stroke="#d97bc3" stroke-width="1.5" rx="2"/>
+                        <rect x="115" y="210" width="20" height="20" fill="#f0a8d8" stroke="#e07ec4" stroke-width="1.5" rx="2"/>
+                        
+                        <!-- Shelving unit 2 -->
+                        <rect x="220" y="50" width="160" height="250" fill="#d4a574" stroke="#b8945f" stroke-width="2"/>
+                        
+                        <!-- Horizontal shelves unit 2 -->
+                        <rect x="230" y="80" width="140" height="8" fill="#8b7355" stroke="#6b5a47" stroke-width="1"/>
+                        <rect x="230" y="130" width="140" height="8" fill="#8b7355" stroke="#6b5a47" stroke-width="1"/>
+                        <rect x="230" y="180" width="140" height="8" fill="#8b7355" stroke="#6b5a47" stroke-width="1"/>
+                        <rect x="230" y="230" width="140" height="8" fill="#8b7355" stroke="#6b5a47" stroke-width="1"/>
+                        
+                        <!-- Vertical supports unit 2 -->
+                        <rect x="225" y="50" width="6" height="250" fill="#8b7355"/>
+                        <rect x="295" y="50" width="6" height="250" fill="#8b7355"/>
+                        <rect x="365" y="50" width="6" height="250" fill="#8b7355"/>
+                        
+                        <!-- Products on unit 2 shelf 1 -->
+                        <rect x="240" y="60" width="20" height="20" fill="#f0a8d8" stroke="#e07ec4" stroke-width="1.5" rx="2"/>
+                        <rect x="265" y="60" width="20" height="20" fill="#d9a0c5" stroke="#c98db9" stroke-width="1.5" rx="2"/>
+                        <rect x="290" y="60" width="20" height="20" fill="#e893ce" stroke="#d97bc3" stroke-width="1.5" rx="2"/>
+                        <rect x="315" y="60" width="20" height="20" fill="#f0a8d8" stroke="#e07ec4" stroke-width="1.5" rx="2"/>
+                        
+                        <!-- Products on unit 2 shelf 2 -->
+                        <rect x="240" y="110" width="20" height="20" fill="#e893ce" stroke="#d97bc3" stroke-width="1.5" rx="2"/>
+                        <rect x="265" y="110" width="20" height="20" fill="#f0a8d8" stroke="#e07ec4" stroke-width="1.5" rx="2"/>
+                        <rect x="290" y="110" width="20" height="20" fill="#d9a0c5" stroke="#c98db9" stroke-width="1.5" rx="2"/>
+                        <rect x="315" y="110" width="20" height="20" fill="#e893ce" stroke="#d97bc3" stroke-width="1.5" rx="2"/>
+                        
+                        <!-- Products on unit 2 shelf 3 -->
+                        <rect x="240" y="160" width="20" height="20" fill="#d9a0c5" stroke="#c98db9" stroke-width="1.5" rx="2"/>
+                        <rect x="265" y="160" width="20" height="20" fill="#e893ce" stroke="#d97bc3" stroke-width="1.5" rx="2"/>
+                        <rect x="290" y="160" width="20" height="20" fill="#f0a8d8" stroke="#e07ec4" stroke-width="1.5" rx="2"/>
+                        <rect x="315" y="160" width="20" height="20" fill="#d9a0c5" stroke="#c98db9" stroke-width="1.5" rx="2"/>
+                        
+                        <!-- Products on unit 2 shelf 4 -->
+                        <rect x="240" y="210" width="20" height="20" fill="#f0a8d8" stroke="#e07ec4" stroke-width="1.5" rx="2"/>
+                        <rect x="265" y="210" width="20" height="20" fill="#e893ce" stroke="#d97bc3" stroke-width="1.5" rx="2"/>
+                        <rect x="290" y="210" width="20" height="20" fill="#d9a0c5" stroke="#c98db9" stroke-width="1.5" rx="2"/>
+                        <rect x="315" y="210" width="20" height="20" fill="#e893ce" stroke="#d97bc3" stroke-width="1.5" rx="2"/>
+                        
+                        <!-- Floor -->
+                        <rect x="0" y="310" width="400" height="40" fill="#c99563"/>
+                        <line x1="0" y1="310" x2="400" y2="310" stroke="#b8845c" stroke-width="2"/>
+                    </svg>
+                </div>
+                
+                <div class="hero">
+                    <h1>Persediaan Barang Dagang</h1>
+                    <p>Media Pembelajaran Digital</p>
+                    <button class="btn-get-started" onclick="showSection('tujuan', event)">Mulai Belajar</button>
+                </div>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon"></div>
+                    <h3>4 Pertemuan</h3>
+                    <p>Materi terstruktur dari dasar hingga pengendalian persediaan</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon"></div>
+                    <h3>Video Pembelajaran</h3>
+                    <p>Video interaktif untuk setiap topik materi</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon"></div>
+                    <h3>Kuis Interaktif</h3>
+                    <p>Uji pemahaman Anda dengan berbagai platform kuis</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon"></div>
+                    <h3>Asesmen Akhir</h3>
+                    <p>Evaluasi komprehensif untuk mengukur pencapaian</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Bagaimana Cara Belajar?</h3>
+                <div class="steps-container">
+                    <div class="step">
+                        <span class="step-number">1</span>
+                        <h4>Pahami Tujuan</h4>
+                        <p>Baca tujuan pembelajaran untuk mengetahui apa yang akan dipelajari</p>
+                    </div>
+                    <div class="step">
+                        <span class="step-number">2</span>
+                        <h4>Ikuti Pertemuan</h4>
+                        <p>Pelajari materi di setiap pertemuan, tonton video, dan download PPT</p>
+                    </div>
+                    <div class="step">
+                        <span class="step-number">3</span>
+                        <h4>Kerjakan Kuis</h4>
+                        <p>Uji pemahaman dengan mengerjakan kuis setelah setiap pertemuan</p>
+                    </div>
+                    <div class="step">
+                        <span class="step-number">4</span>
+                        <h4>Asesmen Akhir</h4>
+                        <p>Selesaikan asesmen akhir untuk mengukur pencapaian belajar</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TUJUAN SECTION -->
+        <section id="tujuan">
+            <h2>Tujuan Pembelajaran</h2>
+            
+            <div class="card">
+                <h3>Kompetensi yang Diharapkan</h3>
+                <p>Dengan adanya website ini, siswa diharapkan mampu untuk:</p>
+            </div>
+
+            <div class="objectives">
+                <div class="obj-item">
+                    <h4>1. Pengertian & Fungsi</h4>
+                    <p>Menjelaskan pengertian persediaan barang dagang serta fungsinya dalam kegiatan operasional perusahaan dagang.</p>
+                </div>
+
+                <div class="obj-item">
+                    <h4>2. Jenis Persediaan</h4>
+                    <p>Mengidentifikasi jenis-jenis persediaan barang dagang yang umum digunakan dalam kegiatan perdagangan.</p>
+                </div>
+
+                <div class="obj-item">
+                    <h4>3. Sistem Pencatatan</h4>
+                    <p>Membedakan metode pencatatan persediaan, yaitu metode periodik dan perpetual.</p>
+                </div>
+
+                <div class="obj-item">
+                    <h4>4. Penilaian Persediaan</h4>
+                    <p>Menjelaskan metode penilaian persediaan seperti FIFO, LIFO, dan Average (rata-rata).</p>
+                </div>
+
+                <div class="obj-item">
+                    <h4>5. Pengendalian Persediaan</h4>
+                    <p>Mengidentifikasi bentuk-bentuk pengendalian persediaan seperti kartu stok, stock opname, sistem kode barang, serta pemisahan fungsi dan tanggung jawab.</p>
+                </div>
+
+                <div class="obj-item">
+                    <h4>6. Reorder Point</h4>
+                    <p>Menghitung titik pemesanan kembali (Reorder Point/ROP) untuk menentukan kapan harus melakukan pemesanan ulang barang.</p>
+                </div>
+
+                <div class="obj-item">
+                    <h4>7. Economic Order Quantity</h4>
+                    <p>Menentukan jumlah pembelian yang ekonomis (EOQ) agar biaya penyimpanan dan pemesanan barang dagang lebih efisien.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- PERTEMUAN SECTION -->
+        <section id="pertemuan">
+            <h2>Materi Pertemuan</h2>
+
+            <div id="pertemuan-grid" class="pertemuan-grid">
+                <div class="pertemuan-card" onclick="showPertemuan(1, event)">
+                    <h4>Pertemuan 1</h4>
+                    <p>Pengertian & Fungsi</p>
+                    <p class="subtitle">Persediaan Barang Dagang</p>
+                </div>
+
+                <div class="pertemuan-card" onclick="showPertemuan(2, event)">
+                    <h4>Pertemuan 2</h4>
+                    <p>Sistem Pencatatan</p>
+                    <p class="subtitle">Periodik & Perpetual</p>
+                </div>
+
+                <div class="pertemuan-card" onclick="showPertemuan(3, event)">
+                    <h4>Pertemuan 3</h4>
+                    <p>Penilaian Persediaan</p>
+                    <p class="subtitle">FIFO, LIFO, Average</p>
+                </div>
+
+                <div class="pertemuan-card" onclick="showPertemuan(4, event)">
+                    <h4>Pertemuan 4</h4>
+                    <p>Pengendalian Persediaan</p>
+                    <p class="subtitle">EOQ & ROP</p>
+                </div>
+            </div>
+
+            <!-- Pertemuan 1 Detail -->
+            <div id="detail-1" class="materi-detail" style="display: none;">
+                <button class="btn-back" onclick="showPertemuan(0, event)">← Kembali</button>
+                <h3>Pertemuan 1: Pengertian dan Fungsi Persediaan Barang Dagang</h3>
+
+                <h4>Persediaan Barang Dagangan</h4>
+                <p>Persediaan barang dagangan adalah barang yang dimiliki perusahaan untuk dijual kembali dalam kegiatan usahanya. Pada perusahaan dagang, persediaan ini berupa produk siap jual. Pada perusahaan manufaktur biasanya dibedakan menjadi bahan baku, barang dalam proses dan barang jadi. Intinya, persediaan adalah stok yang disiapkan agar kegiatan penjualan tidak terhenti.</p>
+
+                <h4>Fungsi Persediaan</h4>
+                <ul>
+                    <li><strong>Menjamin kelancaran penjualan:</strong> Jika stok tersedia, pelanggan tidak perlu menunggu dan perusahaan tidak kehilangan kesempatan penjualan.</li>
+                    <li><strong>Menjaga kestabilan harga:</strong> Stok yang cukup membantu perusahaan tidak perlu sering mengubah harga akibat keterbatasan barang.</li>
+                    <li><strong>Sebagai investasi jangka pendek:</strong> Persediaan adalah aset lancar yang bisa segera diuangkan kembali melalui penjualan.</li>
+                    <li><strong>Menentukan Harga Pokok Penjualan (HPP):</strong> Nilai persediaan akan memengaruhi perhitungan HPP sehingga penting dicatat dengan benar.</li>
+                    <li><strong>Dasar perencanaan pembelian:</strong> Data stok membantu bagian pembelian menentukan kapan dan berapa banyak barang perlu ditambah.</li>
+                </ul>
+
+                <h4>Jenis Persediaan</h4>
+                <p>Secara umum persediaan dapat dikelompokkan menjadi:</p>
+                <ul>
+                    <li><strong>Bahan baku (raw materials):</strong> Bahan utama yang akan diolah menjadi produk. Contoh: kain untuk konveksi, tepung untuk roti.</li>
+                    <li><strong>Barang dalam proses (work in process):</strong> Barang yang sedang dikerjakan dan belum menjadi produk akhir.</li>
+                    <li><strong>Barang jadi atau barang dagang (merchandise inventory):</strong> Barang yang sudah siap dijual kembali tanpa diubah bentuknya. Ini yang paling umum di perusahaan dagang.</li>
+                </ul>
+
+                <h4>Faktor yang Mempengaruhi Besarnya Persediaan</h4>
+                <ul>
+                    <li><strong>Permintaan pasar:</strong> Permintaan tinggi berarti stok harus lebih banyak.</li>
+                    <li><strong>Kebijakan pembelian:</strong> Perusahaan yang membeli dalam jumlah besar biasanya menyimpan stok lebih banyak.</li>
+                    <li><strong>Waktu tunggu pengiriman:</strong> Jika pengiriman pemasok lama, perusahaan perlu stok cadangan.</li>
+                    <li><strong>Biaya penyimpanan:</strong> Kapasitas gudang dan biaya simpan akan membatasi jumlah persediaan.</li>
+                </ul>
+
+                <h4>Kepemilikan Persediaan dalam Perjalanan</h4>
+                <p>Kadang barang sudah dikirim tetapi belum sampai ke pembeli. Siapa yang diakui punya persediaan ini ditentukan oleh syarat penyerahan barang:</p>
+                <ul>
+                    <li><strong>FOB Shipping Point:</strong> Hak milik berpindah ke pembeli sejak barang diserahkan ke perusahaan pengangkut. Jadi selama di perjalanan, barang sudah milik pembeli.</li>
+                    <li><strong>FOB Destination Point:</strong> Hak milik baru berpindah saat barang tiba di tempat pembeli. Selama di perjalanan, barang masih milik penjual.</li>
+                </ul>
+
+                <h4>Sistem Pencatatan Persediaan</h4>
+                <ul>
+                    <li><strong>Sistem Perpetual:</strong> Setiap transaksi pembelian dan penjualan langsung dicatat ke akun persediaan. Saldo persediaan selalu mutakhir sehingga perusahaan bisa tahu stok kapan saja.</li>
+                    <li><strong>Sistem Periodik:</strong> Perubahan persediaan tidak dicatat setiap transaksi. Perusahaan baru menghitung fisik persediaan di akhir periode (stock opname).</li>
+                </ul>
+
+                <div class="quiz-box" style="margin-bottom: 2rem;">
+                    <a href="Presentasi Profil Perusahaan Modern Putih Kuning (1).pdf" target="_blank" class="btn-quiz">Download PPT Pertemuan 1</a>
+                </div>
+
+                <div class="video-box">
+                    <h4>Video Pembelajaran</h4>
+                    <iframe src="https://www.youtube.com/embed/OTy0rDfrWKg" frameborder="0" allowfullscreen></iframe>
+                </div>
+
+                <div class="quiz-box">
+                    <a href="https://www.educaplay.com/learning-resources/26518095-kuis_pertemuan_1.html" target="_blank" class="btn-quiz">Kerjakan Kuis 1</a>
+                </div>
+            </div>
+
+            <!-- Pertemuan 2 Detail -->
+            <div id="detail-2" class="materi-detail" style="display: none;">
+                <button class="btn-back" onclick="showPertemuan(0, event)">← Kembali</button>
+                <h3>Pertemuan 2: Sistem Pencatatan Persediaan Barang Dagang</h3>
+
+                <p>Persediaan adalah aset penting di perusahaan dagang karena menjadi sumber utama pendapatan. Supaya nilai persediaan tercatat dengan benar, digunakan sistem pencatatan persediaan. Secara umum ada dua sistem yang dipakai, yaitu sistem periodik dan sistem perpetual.</p>
+
+                <h4>Sistem Periodik</h4>
+                <p>Sistem periodik adalah sistem pencatatan persediaan yang baru diketahui jumlah akhirnya pada akhir periode akuntansi setelah dilakukan perhitungan fisik di gudang (stock opname). Selama periode berjalan, perubahan stok tidak dicatat satu per satu.</p>
+                <p><strong>Ciri dan cara kerja:</strong></p>
+                <ul>
+                    <li>Setiap pembelian barang dagang dicatat ke akun Pembelian, bukan langsung ke akun Persediaan.</li>
+                    <li>Jika ada retur pembelian atau potongan pembelian, dicatat ke akun tersendiri.</li>
+                    <li>Di akhir periode dilakukan penghitungan fisik barang di gudang.</li>
+                    <li>Setelah diketahui persediaan akhir, dibuat jurnal penyesuaian untuk menentukan Harga Pokok Penjualan (HPP).</li>
+                </ul>
+                <p><strong>Kelebihan:</strong> Pencatatan lebih sederhana. Cocok untuk usaha kecil yang transaksi stoknya belum terlalu banyak.</p>
+                <p><strong>Kekurangan:</strong> Stok tidak bisa diketahui secara real time. Jika ada barang hilang atau rusak di tengah periode, sulit langsung terdeteksi.</p>
+
+                <h4>Sistem Perpetual</h4>
+                <p>Sistem perpetual adalah sistem pencatatan yang langsung mengubah akun Persediaan setiap kali terjadi transaksi, baik pembelian maupun penjualan. Artinya jumlah persediaan selalu terbarui.</p>
+                <p><strong>Ciri dan cara kerja:</strong></p>
+                <ul>
+                    <li>Pembelian barang dagang langsung menambah akun Persediaan.</li>
+                    <li>Saat terjadi penjualan, dicatat dua kali. Pertama untuk penjualannya, kedua untuk mengurangi persediaan.</li>
+                    <li>Saldo persediaan bisa dilihat kapan saja tanpa menunggu akhir periode.</li>
+                </ul>
+                <p><strong>Kelebihan:</strong> Informasi stok lebih akurat dan terkini. Lebih mudah mengawasi barang hilang, rusak atau kadaluwarsa.</p>
+                <p><strong>Kekurangan:</strong> Membutuhkan sistem pencatatan yang lebih rapi, biasanya pakai software. Biaya administrasi dan kontrol lebih tinggi.</p>
+
+                <h4>Perbedaan Sistem Periodik dan Perpetual</h4>
+                <ul>
+                    <li><strong>Cara Pencatatan:</strong> Periodik: setiap beli barang dicatatnya ke akun Pembelian. Perpetual: setiap beli langsung masuk ke akun Persediaan.</li>
+                    <li><strong>Kapan tahu stoknya:</strong> Periodik: baru tahu stok asli pas akhir bulan/tahun. Perpetual: bisa cek stok kapan saja.</li>
+                    <li><strong>Waktu hitung HPP:</strong> Periodik: HPP dihitung di akhir periode. Perpetual: HPP langsung dicatat tiap ada penjualan.</li>
+                    <li><strong>Kontrol barang hilang/rusak:</strong> Periodik: kalau ada selisih, biasanya baru ketahuan akhir periode. Perpetual: lebih cepat ketahuan.</li>
+                    <li><strong>Kebutuhan sistem:</strong> Periodik: bisa manual, cocok usaha kecil. Perpetual: lebih cocok pakai aplikasi/mesin kasir.</li>
+                </ul>
+
+                <div class="quiz-box" style="margin-bottom: 2rem;">
+                    <a href="Presentasi Profil Perusahaan Modern Putih Kuning (2).pdf" target="_blank" class="btn-quiz">Download PPT Pertemuan 2</a>
+                </div>
+
+                <div class="video-box">
+                    <h4>Video Pembelajaran</h4>
+                    <iframe src="https://www.youtube.com/embed/VvSWofSv71I" frameborder="0" allowfullscreen></iframe>
+                </div>
+
+                <div class="quiz-box">
+                    <a href="https://www.educaplay.com/learning-resources/26518882-quiz_pertemuan_2.html" target="_blank" class="btn-quiz">Kerjakan Kuis 2</a>
+                </div>
+            </div>
+
+            <!-- Pertemuan 3 Detail -->
+            <div id="detail-3" class="materi-detail" style="display: none;">
+                <button class="btn-back" onclick="showPertemuan(0, event)">← Kembali</button>
+                <h3>Pertemuan 3: Penilaian Persediaan</h3>
+
+                <p>Penilaian persediaan diperlukan agar perusahaan tahu berapa nilai barang yang masih ada di gudang dan berapa yang sudah menjadi beban (Harga Pokok Penjualan). Nilai ini akan masuk ke laporan keuangan, jadi metode yang dipakai harus konsisten.</p>
+
+                <h4>Penilaian dengan Pendekatan Arus Harga Pokok</h4>
+                <p>Pendekatan ini mengatur urutan mana yang dianggap keluar duluan dari gudang. Ini bukan urutan fisik barang, tapi urutan pencatatan.</p>
+
+                <h4 style="margin-top: 1.5rem;">a. FIFO (First In First Out)</h4>
+                <p>Barang yang pertama masuk dianggap yang pertama keluar. Artinya:</p>
+                <ul>
+                    <li>Persediaan akhir akan dinilai dengan harga pembelian yang paling baru.</li>
+                    <li>Cocok jika harga cenderung naik karena nilai persediaan akhirnya jadi lebih mendekati harga sekarang.</li>
+                </ul>
+
+                <h4>b. LIFO (Last In First Out)</h4>
+                <p>Barang yang terakhir masuk dianggap yang pertama keluar. Artinya:</p>
+                <ul>
+                    <li>Persediaan akhir dinilai dengan harga yang lama.</li>
+                    <li>Di beberapa negara metode ini sudah jarang dipakai untuk laporan keuangan, tetapi secara konsep tetap diajarkan.</li>
+                </ul>
+
+                <h4>c. Metode Rata-rata (Average)</h4>
+                <p>Harga pokok per unit dihitung dari rata-rata biaya perolehan. Hasilnya biasanya berada di tengah-tengah FIFO dan LIFO. Metode ini banyak dipakai karena perhitungannya lebih stabil.</p>
+
+                <h4>Penilaian Persediaan Selain Arus Harga Pokok</h4>
+                <p>Bagian ini dipakai kalau kondisi barang tidak normal atau data penjualan tidak lengkap.</p>
+
+                <h4 style="margin-top: 1.5rem;">a. Lower of Cost or Market (LCM)</h4>
+                <p>Persediaan dinilai berdasarkan nilai yang lebih rendah antara harga pokok dan harga pasar. Dipakai kalau barang rusak, kadaluarsa atau harga pasar turun. Tujuannya supaya aset tidak dicatat terlalu tinggi.</p>
+
+                <h4>b. Gross Profit Method</h4>
+                <p>Metode ini sifatnya estimasi. Dipakai kalau dokumen persediaan hilang, misalnya karena bencana. Persediaan akhir dihitung berdasarkan penjualan dan persentase laba kotor rata-rata perusahaan.</p>
+
+                <h4>c. Retail Method</h4>
+                <p>Dipakai toko ritel yang punya banyak item. Caranya menghitung persediaan akhir berdasarkan harga jual (ritel) lalu dikonversi ke harga pokok dengan memakai rasio harga pokok terhadap harga jual.</p>
+
+                <div class="quiz-box" style="margin-bottom: 2rem;">
+                    <a href="Presentasi Profil Perusahaan Modern Putih Kuning (3).pdf" target="_blank" class="btn-quiz">Download PPT Pertemuan 3</a>
+                </div>
+
+                <div class="video-box">
+                    <h4>Video Pembelajaran</h4>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                        <iframe src="https://www.youtube.com/embed/prX4a7LMC_0" frameborder="0" allowfullscreen></iframe>
+                        <iframe src="https://www.youtube.com/embed/FdlB_bxBdEQ" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <div class="quiz-box">
+                    <a href="https://create.kahoot.it/share/quiz-pertemuan-3/cb397fc3-a821-4b75-90a4-3334ef6cb9c5" target="_blank" class="btn-quiz">Kerjakan Kuis 3</a>
+                </div>
+            </div>
+
+            <!-- Pertemuan 4 Detail -->
+            <div id="detail-4" class="materi-detail" style="display: none;">
+                <button class="btn-back" onclick="showPertemuan(0, event)">← Kembali</button>
+                <h3>Pertemuan 4: Pengendalian Persediaan Barang Dagang</h3>
+
+                <p>Pengendalian persediaan adalah upaya perusahaan untuk menjaga supaya stok barang di gudang selalu dalam jumlah yang pas. Tidak terlalu banyak supaya modal tidak mengendap dan barang tidak rusak. Tidak terlalu sedikit supaya penjualan tidak terganggu.</p>
+
+                <h4>Tujuan Pengendalian Persediaan</h4>
+                <ul>
+                    <li>Menjamin barang tersedia saat dibutuhkan pelanggan.</li>
+                    <li>Menghindari kelebihan stok yang bikin biaya simpan membengkak.</li>
+                    <li>Mengurangi risiko kehilangan, pencurian atau kerusakan.</li>
+                    <li>Menjaga arus kas tetap sehat karena persediaan tidak menahan terlalu banyak dana.</li>
+                </ul>
+
+                <h4>Metode Pengendalian Persediaan</h4>
+
+                <h4 style="margin-top: 1.5rem;">EOQ (Economic Order Quantity)</h4>
+                <p>EOQ adalah cara menghitung jumlah pembelian yang paling ekonomis setiap kali pesan. Tujuannya supaya total biaya persediaan jadi paling rendah. Biaya persediaan di sini gabungan dari biaya pesan dan biaya simpan. Jika pesan terlalu sering biayanya besar. Jika pesan terlalu banyak, biaya simpan jadi besar. EOQ mencari titik tengah yang paling efisien.</p>
+
+                <h4>Safety Stock dan Reorder Point (ROP)</h4>
+                <p>Kadang permintaan tiba tiba naik atau barang datang terlambat. Untuk jaga jaga, perusahaan menyiapkan stok cadangan yang disebut safety stock. Supaya tidak kehabisan barang, digunakan titik pemesanan kembali atau Reorder Point (ROP). Artinya saat stok di gudang sudah mencapai angka ROP, perusahaan harus pesan lagi. Dengan begitu penjualan tetap jalan meskipun supplier belum mengirim barang.</p>
+
+                <h4>Pencatatan dan Pengawasan Fisik</h4>
+
+                <h4 style="margin-top: 1rem;">Kartu Persediaan</h4>
+                <p>Setiap barang yang masuk dan keluar dicatat di kartu persediaan atau sistem stok. Isinya tanggal, keterangan transaksi, jumlah masuk, jumlah keluar dan saldo akhir. Saldo di kartu ini idealnya sama dengan barang fisik di gudang.</p>
+
+                <h4>Stock Opname</h4>
+                <p>Ini adalah kegiatan hitung langsung barang di gudang. Biasanya dilakukan di akhir periode atau jika ada selisih antara catatan dan stok nyata. Hasil stock opname dipakai untuk koreksi pencatatan dan memastikan laporan keuangan menunjukkan jumlah persediaan yang benar.</p>
+
+                <h4>Sistem Pengendalian Internal Persediaan</h4>
+                <p>Supaya stok aman dan tidak mudah diselewengkan, perusahaan perlu pengendalian internal. Prinsip utamanya:</p>
+                <ul>
+                    <li><strong>Pemisahan tugas:</strong> Pembelian, penerimaan, penyimpanan dan pencatatan sebaiknya dikerjakan orang berbeda.</li>
+                    <li><strong>Otorisasi:</strong> Setiap pengeluaran dan pembelian barang harus disetujui pejabat yang berwenang.</li>
+                    <li><strong>Dokumentasi:</strong> Gunakan bukti penerimaan, faktur dan bukti keluar masuk barang.</li>
+                    <li><strong>Pemeriksaan berkala:</strong> Bisa lewat audit internal atau stock opname.</li>
+                    <li><strong>Komputerisasi:</strong> Pencatatan berbasis sistem membantu stok tercatat real time.</li>
+                </ul>
+
+                <div class="quiz-box" style="margin-bottom: 2rem;">
+                    <a href="Presentasi Profil Perusahaan Modern Putih Kuning (4).pdf" target="_blank" class="btn-quiz">Download PPT Pertemuan 4</a>
+                </div>
+
+                <div class="video-box">
+                    <h4>Video Pembelajaran</h4>
+                    <iframe src="https://www.youtube.com/embed/06xg9NmX2Ak" frameborder="0" allowfullscreen></iframe>
+                </div>
+
+                <div class="quiz-box">
+                    <a href="https://quiz.com/c7d34948-eeb6-4218-bf9b-b8cbb4343976/" target="_blank" class="btn-quiz">Kerjakan Kuis 4</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ASESMEN SECTION -->
+        <section id="asesmen">
+            <h2>Asesmen Akhir</h2>
+
+            <div class="card">
+                <h3>Penilaian Pemahaman</h3>
+                <p>Setelah menyelesaikan semua pertemuan, silakan kerjakan asesmen akhir di bawah ini untuk mengukur pemahaman Anda:</p>
+                
+                <div class="assessment-box">
+                    <p>Klik tombol di bawah untuk membuka formulir penilaian akhir:</p>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfErNF1Q27nFomHKwn1vI5LanvwBjY1bj-wUQ2_QzHhrsU3ng/viewform" target="_blank" class="btn-assessment">Buka Penilaian Akhir</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- SUMBER SECTION -->
+        <section id="sumber">
+            <h2>Sumber Pembelajaran</h2>
+
+            <div class="card">
+                <h3>Unduh Sumber Referensi</h3>
+                <p>Berikut adalah file PDF sumber dan referensi yang digunakan dalam pembuatan materi pembelajaran ini:</p>
+            </div>
+
+            <div class="sources-grid">
+                <div class="source-card">
+                    <div class="source-icon">📖</div>
+                    <h4>Sumber Lengkap</h4>
+                    <p>Koleksi lengkap semua sumber referensi untuk pembelajaran Persediaan Barang Dagang</p>
+                    <div style="margin-top: 1rem; position: relative; z-index: 10;">
+                        <button onclick="window.location.href='pdf-akuntansi-persediaan_compress.pdf'; return false;" class="btn-quiz">📥 Download PDF</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT SECTION -->
+        <section id="about">
+            <h2>Tentang Pembuat</h2>
+
+            <div class="about-card">
+                <div class="about-image">
+                    <img src="Gambar WhatsApp 2025-10-10 pukul 16.30.00_4ef6cfd6.jpg" alt="Titis Laelatul Khasanah">
+                </div>
+                <div class="about-content">
+                    <h3>Halo!</h3>
+                    <p>Perkenalkan, saya <strong>Titis Laelatul Khasanah</strong>, mahasiswa Program Studi Pendidikan Akuntansi.</p>
+                    
+                    <p>Website ini saya buat sebagai bagian dari tugas mata kuliah <em>Accounting Instructional Material and Media</em>, dengan topik pembelajaran: <strong>"Persediaan Barang Dagang"</strong></p>
+                    
+                    <p>Melalui media ini, saya berharap pembelajaran tentang persediaan barang dagang dapat menjadi lebih menarik, mudah dipahami, dan interaktif, sehingga membantu peserta didik memahami bagaimana perusahaan dagang mengelola persediaannya secara efektif.</p>
+                    
+                    <div class="contact-info">
+                        <p><strong>Email:</strong> <a href="mailto:titislaelatul26@students.unnes.ac.id">titislaelatul26@students.unnes.ac.id</a></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Titis Laelatul Khasanah - Media Pembelajaran Persediaan Barang Dagang</p>
+    </footer>
+
+    <script>
+        function showSection(sectionId, evt) {
+            evt.preventDefault();
+            
+            // Hide all sections
+            const sections = document.querySelectorAll('section');
+            sections.forEach(sec => sec.classList.remove('active'));
+            
+            // Show selected section
+            document.getElementById(sectionId).classList.add('active');
+            
+            // Update active nav link
+            const navLinks = document.querySelectorAll('nav a');
+            navLinks.forEach(link => link.classList.remove('active'));
+            
+            if (evt.target) {
+                evt.target.classList.add('active');
+            }
+        }
+
+        function showPertemuan(num, evt) {
+            if (evt) {
+                evt.preventDefault();
+            }
+            
+            // Hide grid and all details
+            document.getElementById('pertemuan-grid').style.display = num === 0 ? 'grid' : 'none';
+            
+            // Hide all detail sections
+            for (let i = 1; i <= 4; i++) {
+                document.getElementById('detail-' + i).style.display = 'none';
+            }
+            
+            // Show selected detail if num is not 0
+            if (num > 0) {
+                document.getElementById('detail-' + num).style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>
